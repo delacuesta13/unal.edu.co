@@ -1,0 +1,4 @@
+cd /opt/kettle
+
+./kitchen.sh -file='/home/adrian/Documentos/academia/master/2014-1/tabd/project-1/dev/kettle/football_db.kjb' -param:projectDirectory='/home/adrian/Documentos/academia/master/2014-1/tabd/project-1' -param:competitionDescription='en.2013_14' -Level=Rowlevel > /home/adrian/Documentos/academia/master/2014-1/tabd/project-1/run.err.log
+

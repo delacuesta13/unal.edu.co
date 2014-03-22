@@ -1,0 +1,17 @@
+URL de API:
+http://footballdb.herokuapp.com/api/v1/
+
+http://footballdb.herokuapp.com/api/v1/event/<competición>/<consulta>
+
+Donde, 
+    <competición>:
+        es.2013_14 -> es: Liga Española; 2013_24: temporada
+        en.2013_14 -> en: Liga Inglesa
+        it.2013_14 -> it: Calcio
+        cl.2013_14 -> cl: UEFA Champions League
+        america.l.2013 -> america.l: Copa Libertadores de América
+    <consulta>:
+        teams -> retorna todos los equipos que participan en la competición
+        rounds -> retorna todas las rondas de la competición
+        round/<n> -> retorna los resultados de la ronda <n>
+

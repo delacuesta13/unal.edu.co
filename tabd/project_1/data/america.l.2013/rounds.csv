@@ -1,0 +1,139 @@
+competition_key,date,home_team_key,away_team_key,match_round,full_time_home_team_goals,full_time_away_team_goals,full_time_result
+america.l.2013,2013/01/22,tigre,deportivoanzoategui,Matchday P.1 - 1St Leg,2,1,H
+america.l.2013,2013/01/23,ligadequito,gremio,Matchday P.1 - 1St Leg,1,0,H
+america.l.2013,2013/01/24,deportestolima,trujillo,Matchday P.1 - 1St Leg,1,0,H
+america.l.2013,2013/01/24,defensorsporting,olimpia,Matchday P.1 - 1St Leg,0,0,D
+america.l.2013,2013/01/23,saopaulo,bolivar,Matchday P.1 - 1St Leg,5,0,H
+america.l.2013,2013/01/22,leon,iquique,Matchday P.1 - 1St Leg,1,1,D
+america.l.2013,2013/01/29,deportivoanzoategui,tigre,Matchday P.2 - 2Nd Leg,0,3,A
+america.l.2013,2013/01/30,gremio,ligadequito,Matchday P.2 - 2Nd Leg,1,0,H
+america.l.2013,2013/01/31,trujillo,deportestolima,Matchday P.2 - 2Nd Leg,1,1,D
+america.l.2013,2013/01/31,olimpia,defensorsporting,Matchday P.2 - 2Nd Leg,2,0,H
+america.l.2013,2013/01/30,bolivar,saopaulo,Matchday P.2 - 2Nd Leg,4,3,H
+america.l.2013,2013/01/29,iquique,leon,Matchday P.2 - 2Nd Leg,1,1,D
+america.l.2013,2013/02/12,nacional,barcelonaguayaquil,Matchday 1,2,2,D
+america.l.2013,2013/02/13,bocajuniors,toluca,Matchday 1,1,2,A
+america.l.2013,2013/02/14,palmeiras,sportingcristal,Matchday 1,2,1,H
+america.l.2013,2013/02/13,atleticomg,saopaulo,Matchday 1,2,1,H
+america.l.2013,2013/02/14,thestrongest,arsenalsarandi,Matchday 1,2,1,H
+america.l.2013,2013/02/12,emelec,velez,Matchday 1,1,0,H
+america.l.2013,2013/02/12,iquique,penarol,Matchday 1,1,2,A
+america.l.2013,2013/02/13,realgarcilaso,santafe,Matchday 1,1,1,D
+america.l.2013,2013/02/14,deportestolima,porteno,Matchday 1,2,1,H
+america.l.2013,2013/02/12,udechile,deportivolara,Matchday 1,2,0,H
+america.l.2013,2013/02/14,newells,olimpia,Matchday 1,3,1,H
+america.l.2013,2013/02/13,caracas,fluminense,Matchday 1,0,1,A
+america.l.2013,2013/02/14,gremio,huachipato,Matchday 1,1,2,A
+america.l.2013,2013/02/19,toluca,nacional,Matchday 2,2,3,A
+america.l.2013,2013/02/21,tigre,libertad,Matchday 2,0,2,A
+america.l.2013,2013/02/19,penarol,emelec,Matchday 2,1,0,H
+america.l.2013,2013/02/20,velez,iquique,Matchday 2,3,0,H
+america.l.2013,2013/02/19,millonarios,tijuana,Matchday 2,0,1,A
+america.l.2013,2013/02/20,sanjose,corinthians,Matchday 2,1,1,D
+america.l.2013,2013/02/21,porteno,realgarcilaso,Matchday 2,0,1,A
+america.l.2013,2013/02/21,santafe,deportestolima,Matchday 2,1,1,D
+america.l.2013,2013/02/19,olimpia,udechile,Matchday 2,3,0,H
+america.l.2013,2013/02/21,deportivolara,newells,Matchday 2,2,1,H
+america.l.2013,2013/02/20,huachipato,caracas,Matchday 2,1,3,A
+america.l.2013,2013/02/20,fluminense,gremio,Matchday 2,0,3,A
+america.l.2013,2013/02/27,barcelonaguayaquil,bocajuniors,Matchday 3,1,2,A
+america.l.2013,2013/02/28,libertad,palmeiras,Matchday 3,2,0,H
+america.l.2013,2013/02/28,sportingcristal,tigre,Matchday 3,2,0,H
+america.l.2013,2013/02/26,arsenalsarandi,atleticomg,Matchday 3,2,5,A
+america.l.2013,2013/02/28,saopaulo,thestrongest,Matchday 3,2,1,H
+america.l.2013,2013/02/26,penarol,velez,Matchday 3,0,1,A
+america.l.2013,2013/02/27,iquique,emelec,Matchday 3,2,0,H
+america.l.2013,2013/02/26,tijuana,sanjose,Matchday 3,4,0,H
+america.l.2013,2013/02/27,corinthians,millonarios,Matchday 3,2,0,H
+america.l.2013,2013/02/26,deportestolima,realgarcilaso,Matchday 3,0,1,A
+america.l.2013,2013/02/27,huachipato,fluminense,Matchday 3,1,2,A
+america.l.2013,2013/03/06,toluca,barcelonaguayaquil,Matchday 4,1,1,D
+america.l.2013,2013/03/07,bocajuniors,nacional,Matchday 4,0,1,A
+america.l.2013,2013/03/06,libertad,sportingcristal,Matchday 4,2,2,D
+america.l.2013,2013/03/06,tigre,palmeiras,Matchday 4,1,0,H
+america.l.2013,2013/03/07,saopaulo,arsenalsarandi,Matchday 4,1,1,D
+america.l.2013,2013/03/07,atleticomg,thestrongest,Matchday 4,2,1,H
+america.l.2013,2013/03/05,emelec,iquique,Matchday 4,2,1,H
+america.l.2013,2013/03/06,tijuana,corinthians,Matchday 4,1,0,H
+america.l.2013,2013/03/07,millonarios,sanjose,Matchday 4,2,1,H
+america.l.2013,2013/03/07,porteno,santafe,Matchday 4,1,2,A
+america.l.2013,2013/03/05,olimpia,deportivolara,Matchday 4,2,2,D
+america.l.2013,2013/03/05,newells,udechile,Matchday 4,1,2,A
+america.l.2013,2013/03/05,gremio,caracas,Matchday 4,4,1,H
+america.l.2013,2013/03/06,fluminense,huachipato,Matchday 4,1,1,D
+america.l.2013,2013/03/13,barcelonaguayaquil,toluca,Matchday 5,0,0,D
+america.l.2013,2013/03/14,nacional,bocajuniors,Matchday 5,0,1,A
+america.l.2013,2013/03/12,sportingcristal,libertad,Matchday 5,1,1,D
+america.l.2013,2013/03/13,thestrongest,atleticomg,Matchday 5,1,2,A
+america.l.2013,2013/03/14,arsenalsarandi,saopaulo,Matchday 5,2,1,H
+america.l.2013,2013/03/12,velez,penarol,Matchday 5,3,1,H
+america.l.2013,2013/03/13,corinthians,tijuana,Matchday 5,3,0,H
+america.l.2013,2013/03/14,sanjose,millonarios,Matchday 5,2,0,H
+america.l.2013,2013/03/12,udechile,newells,Matchday 5,0,2,A
+america.l.2013,2013/03/13,deportivolara,olimpia,Matchday 5,1,5,A
+america.l.2013,2013/03/12,caracas,gremio,Matchday 5,2,1,H
+america.l.2013,2013/04/03,bocajuniors,barcelonaguayaquil,Matchday 6,1,0,H
+america.l.2013,2013/04/04,nacional,toluca,Matchday 6,4,0,H
+america.l.2013,2013/04/02,palmeiras,tigre,Matchday 6,2,0,H
+america.l.2013,2013/04/03,atleticomg,arsenalsarandi,Matchday 6,5,2,H
+america.l.2013,2013/04/04,thestrongest,saopaulo,Matchday 6,2,1,H
+america.l.2013,2013/04/02,emelec,penarol,Matchday 6,2,0,H
+america.l.2013,2013/04/03,iquique,velez,Matchday 6,1,3,A
+america.l.2013,2013/04/03,sanjose,tijuana,Matchday 6,1,1,D
+america.l.2013,2013/04/03,millonarios,corinthians,Matchday 6,0,1,A
+america.l.2013,2013/04/02,realgarcilaso,deportestolima,Matchday 6,0,3,A
+america.l.2013,2013/04/02,santafe,porteno,Matchday 6,1,0,H
+america.l.2013,2013/04/02,udechile,olimpia,Matchday 6,0,1,A
+america.l.2013,2013/04/04,newells,deportivolara,Matchday 6,3,1,H
+america.l.2013,2013/04/04,caracas,huachipato,Matchday 6,0,4,A
+america.l.2013,2013/04/09,tigre,sportingcristal,Matchday 7,3,1,H
+america.l.2013,2013/04/11,palmeiras,libertad,Matchday 7,1,0,H
+america.l.2013,2013/04/09,penarol,iquique,Matchday 7,3,0,H
+america.l.2013,2013/04/09,velez,emelec,Matchday 7,0,0,D
+america.l.2013,2013/04/10,corinthians,sanjose,Matchday 7,3,0,H
+america.l.2013,2013/04/10,tijuana,millonarios,Matchday 7,1,0,H
+america.l.2013,2013/04/09,deportestolima,santafe,Matchday 7,1,2,A
+america.l.2013,2013/04/10,realgarcilaso,porteno,Matchday 7,5,1,H
+america.l.2013,2013/04/11,deportivolara,udechile,Matchday 7,2,3,A
+america.l.2013,2013/04/11,olimpia,newells,Matchday 7,4,1,H
+america.l.2013,2013/04/10,gremio,fluminense,Matchday 7,0,0,D
+america.l.2013,2013/04/17,barcelonaguayaquil,nacional,Matchday 8,1,0,H
+america.l.2013,2013/04/17,toluca,bocajuniors,Matchday 8,3,2,H
+america.l.2013,2013/04/18,sportingcristal,palmeiras,Matchday 8,1,0,H
+america.l.2013,2013/04/18,libertad,tigre,Matchday 8,3,5,A
+america.l.2013,2013/04/17,arsenalsarandi,thestrongest,Matchday 8,2,1,H
+america.l.2013,2013/04/17,saopaulo,atleticomg,Matchday 8,2,0,H
+america.l.2013,2013/04/16,porteno,deportestolima,Matchday 8,0,0,D
+america.l.2013,2013/04/16,santafe,realgarcilaso,Matchday 8,2,0,H
+america.l.2013,2013/04/18,huachipato,gremio,Matchday 8,1,1,D
+america.l.2013,2013/04/18,fluminense,caracas,Matchday 8,1,0,H
+america.l.2013,2013/04/24,newells,velez,Round Of 16 - 1St Leg,0,1,A
+america.l.2013,2013/04/25,realgarcilaso,nacional,Round Of 16 - 1St Leg,1,0,H
+america.l.2013,2013/04/30,tijuana,palmeiras,Round Of 16 - 1St Leg,0,0,D
+america.l.2013,2013/04/30,tigre,olimpia,Round Of 16 - 1St Leg,2,1,H
+america.l.2013,2013/05/01,bocajuniors,corinthians,Round Of 16 - 1St Leg,1,0,H
+america.l.2013,2013/05/01,gremio,santafe,Round Of 16 - 1St Leg,2,1,H
+america.l.2013,2013/05/02,saopaulo,atleticomg,Round Of 16 - 1St Leg,1,2,A
+america.l.2013,2013/05/02,emelec,fluminense,Round Of 16 - 1St Leg,2,1,H
+america.l.2013,2013/05/08,atleticomg,saopaulo,Round Of 16 - 2Nd Leg,4,1,H
+america.l.2013,2013/05/08,fluminense,emelec,Round Of 16 - 2Nd Leg,2,0,H
+america.l.2013,2013/05/09,nacional,realgarcilaso,Round Of 16 - 2Nd Leg,1,0,H
+america.l.2013,2013/05/14,palmeiras,tijuana,Round Of 16 - 2Nd Leg,1,2,A
+america.l.2013,2013/05/15,corinthians,bocajuniors,Round Of 16 - 2Nd Leg,1,1,D
+america.l.2013,2013/05/15,velez,newells,Round Of 16 - 2Nd Leg,1,2,A
+america.l.2013,2013/05/16,santafe,gremio,Round Of 16 - 2Nd Leg,1,0,H
+america.l.2013,2013/05/16,olimpia,tigre,Round Of 16 - 2Nd Leg,2,0,H
+america.l.2013,2013/05/22,realgarcilaso,santafe,Quarterfinal - 1St Leg,1,3,A
+america.l.2013,2013/05/22,fluminense,olimpia,Quarterfinal - 1St Leg,0,0,D
+america.l.2013,2013/05/23,tijuana,atleticomg,Quarterfinal - 1St Leg,2,2,D
+america.l.2013,2013/05/23,bocajuniors,newells,Quarterfinal - 1St Leg,0,0,D
+america.l.2013,2013/05/28,santafe,realgarcilaso,Quarterfinal - 2Nd Leg,2,0,H
+america.l.2013,2013/05/29,newells,bocajuniors,Quarterfinal - 2Nd Leg,0,0,D
+america.l.2013,2013/05/29,olimpia,fluminense,Quarterfinal - 2Nd Leg,2,1,H
+america.l.2013,2013/05/30,atleticomg,tijuana,Quarterfinal - 2Nd Leg,1,1,D
+america.l.2013,2013/07/02,olimpia,santafe,Semifinals - 1St Leg,2,0,H
+america.l.2013,2013/07/03,newells,atleticomg,Semifinals - 1St Leg,2,0,H
+america.l.2013,2013/07/09,santafe,olimpia,Semifinals - 2Nd Leg,1,0,H
+america.l.2013,2013/07/10,atleticomg,newells,Semifinals - 2Nd Leg,2,0,H
+america.l.2013,2013/07/17,olimpia,atleticomg,Final - 1St Leg,2,0,H
+america.l.2013,2013/07/24,atleticomg,olimpia,Final - 2Nd Leg,2,0,H
