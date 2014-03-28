@@ -1,0 +1,8 @@
+sistema_key,sistema,axioma,reglas,angulo,iteraciones,distancia,rotacion_inicial,posicion_inicial
+koch_curve,Koch curve,F,F=F-F++F-F,60,4,5,0,0/0
+dragon_curve,Drago curve,FX,X=X-YF-/Y=+FX+Y,90,10,15,270,-150/0
+hilbert_curve,Hilbert curve,L,L=+RF-LFL-FR+/R=-LF+RFR+FL-,90,4,10,0,-113/100
+koch_island,Koch island,F+F+F+F,F=F+F-F-FF+F+F-F,90,3,10,0,-200/150
+sierpinski_triangle,Sierpinski Triangle,FXF--FF--FF,X=--FXF++FXF++FXF--/F=FF,60,5,5,0,-200/-50
+plant_edge_rewriting,Plant Edge rewriting,F,F=FF+[+F-F-F]-[-F+F+F],22,4,5,90,0/-200
+plant_node_rewriting,Plant Node rewriting,X,X=F+[[X]-X]-F[-FX]+X/F=FF,22,5,5,90,0/-200
