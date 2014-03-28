@@ -73,9 +73,8 @@ class FrontEnd(object):
         ttk.Label(self.frame, text="Posición inicial (x,y)").grid(column=1, row=10, pady=5)
         form_posicion_inicial = ttk.Entry(self.frame, width=11, textvariable=self.posicion_inicial).grid(column=2, row=10)
         
-        ttk.Button(self.frame, text="Guardar sistema").grid(column=1, row=11, pady=10)
+        ttk.Button(self.frame, text="Limpiar formulario", command=self.limpiar_formulario).grid(column=1, row=11, pady=10)
         ttk.Button(self.frame, text="Dibujar sistema", command=self.validar_datos).grid(column=2, row=11)
-        ttk.Button(self.frame, text="Limpiar formulario", command=self.limpiar_formulario).grid(column=1, row=12, pady=10)
         
     def on_system_change(self, index, value, op):
         sistema = self.sistemas.get().strip().replace(' ', '')
