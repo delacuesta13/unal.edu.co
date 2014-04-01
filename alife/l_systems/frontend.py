@@ -165,7 +165,7 @@ class FrontEnd(object):
                                    int(s_iteraciones), int(s_distancia),
                                    int(s_rotacion_inicial), 
                                    int(posiciones[0]), int(posiciones[1]))
-            l_system.dibujar_sistema()
+            l_system.dibujar_sistema(True)
 
 def main():
     root = Tk()
