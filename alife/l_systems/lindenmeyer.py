@@ -1,5 +1,6 @@
 # -*- coding: iso-8859-1 -*-
 
+import random
 import turtle
 
 class Lindenmeyer(object):
@@ -33,19 +34,24 @@ class Lindenmeyer(object):
 
         self.instrucciones = transformaciones[self.iteraciones]
 
-    def dibujar_sistema(self):
+    def dibujar_sistema(self, aleatorio=False):
         tortuga = turtle.Turtle()
         
         tortuga.up()
         tortuga.setpos(self.posx_inic, self.posy_inic)
         tortuga.left(self.rotacion_inicial)
         tortuga.down()
-        tortuga.speed(10)
+        tortuga.speed(0)
         
         ventana = turtle.Screen()
         
         estado_actual = []
+        angulo_original = self.angulo
+        distancia_original = self.distancia
         for inst in self.instrucciones:
+            if aleatorio:
+                self.angulo = (float(random.randint(7,13)) / 10) * angulo_original
+                self.distancia = (float(random.randint(7,13)) / 10) * distancia_original
             if inst == 'F':
                 # dibujar hacia adelante
              tortuga.forward(self.distancia)
