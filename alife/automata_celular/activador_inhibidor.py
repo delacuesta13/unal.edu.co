@@ -10,10 +10,10 @@ Referencias:
 [4] http://netpbm.sourceforge.net/doc/ppm.html (Portable pixelmap)
 """
 
-import datetime, random
+import datetime, random, sys
 
 class ActivadorInhibidor(object):
-    def __init__(self, inhibicion=0.40, rad_int=3, rad_ext=9, filas=400, cols=400):
+    def __init__(self, inhibicion=0.3, rad_int=3, rad_ext=6, filas=512, cols=512):
         self.w = inhibicion # constante de inhibición
         self.A = 1.0 # constante de activación
         self.radio_int = rad_int # (radio de) vecindad de activación
@@ -154,8 +154,10 @@ class ActivadorInhibidor(object):
         f_automata.flush()
 
 def main():
-    activador_inhibidor = ActivadorInhibidor()
+    constante_inhibicion = float(random.randint(10, 30)) / 100
+    if len(sys.argv) > 1:
+        constante_inhibicion = float(sys.argv[1]) / 100
+    activador_inhibidor = ActivadorInhibidor(constante_inhibicion)    
         
 if __name__ == '__main__':
     main()
-        
