@@ -13,17 +13,18 @@ Referencias:
 import datetime, random, sys
 
 class ActivadorInhibidor(object):
-    def __init__(self, inhibicion=0.3, rad_int=3, rad_ext=6, filas=512, cols=512):
+    def __init__(self, inhibicion, rad_int, rad_ext, casillas, iteraciones):
         self.w = inhibicion # constante de inhibición
         self.A = 1.0 # constante de activación
         self.radio_int = rad_int # (radio de) vecindad de activación
         self.radio_ext = rad_ext # (radio de) vecindad de inhibición
-        self.filas = filas # filas del autómata
-        self.columnas = cols # columnas del autómata
+        self.filas = casillas # filas del autómata
+        self.columnas = casillas # columnas del autómata
+        self.iteraciones = iteraciones
         self.automata = []
         
         self.generar_automata()
-        self.procesar_automata(10)
+        self.procesar_automata()
         self.dibujar_automata()
         
     def generar_automata(self):
@@ -33,8 +34,8 @@ class ActivadorInhibidor(object):
                 fil_automata.append(str(int(random.randint(0,1))))
             self.automata.append(fil_automata)
     
-    def procesar_automata(self, iteraciones=10):
-        for iteracion in xrange(iteraciones):
+    def procesar_automata(self):
+        for iteracion in xrange(self.iteraciones):
             automata_iteracion = []
             for i in xrange(self.filas):
                 fil_automata = []
@@ -128,36 +129,62 @@ class ActivadorInhibidor(object):
     
         return elementos_vivos
 
-    def dibujar_automata(self):
+    def dibujar_automata(self, rgb=False):
+        # dimensión de las imágenes
+        dimension_img = str(self.columnas) + ' ' + str(self.filas)
+        salida = []
+        salida.append('P1\n' + dimension_img + '\n') # imagen en blanco y negro
+        salida.append('P3\n' + dimension_img + '\n255\n') # imagen en RGB
         # colores
-        colores_rgb = {'black': '  0  0  0', 'red': '255  0  0', 'green': '  0 255  0',
-                       'blue': '  0  0 255', 'yellow': '255 255  0', 'cyan': '  0 255 255',
-                       'magenta': '255  0 255', 'white': '255 255 255'}
+        colores_rgb = {'black':   '  0  0   0',  'red':   '255  0    0', 'green': '  0 255   0',
+                       'blue':    '  0  0 255', 'yellow': '255 255   0', 'cyan':  '  0 255 255',
+                       'magenta': '255  0 255', 'white':  '255 255 255'}
         color_activador = random.choice(colores_rgb.keys())
         color_inhibidor = random.choice(colores_rgb.keys())
         while color_activador == color_inhibidor:
             color_inhibidor = random.choice(colores_rgb.keys())
-        # estructura de la imagen
-        s = 'P3 {} {}\n255\n'.format(self.columnas, self.filas)
+        # dibujar imágenes
         for i in xrange(self.filas):
             linea = ''
+            linea_rgb = ''
             for j in xrange(self.columnas):
                 pixel = colores_rgb[color_inhibidor]
                 if self.automata[i][j] == '1':
                     pixel = colores_rgb[color_activador]
-                linea += pixel + (' '*3)
-            s += linea.rstrip() + ('\n' if i < self.filas - 1 else '')
+                linea_rgb += pixel + (' '*4)
+                linea += self.automata[i][j] + ' '
+            salida[1] += linea_rgb.rstrip() + ('\n' if i < self.filas - 1 else '')
+            salida[0] += linea.rstrip() + ('\n' if i < self.filas - 1 else '')
+        # generar archivos
         tiempo = datetime.datetime.today().strftime('%Y%m%d-%H%M%S')
-        f_nombre = 'img/ac_act-inh_w{}_{}x{}_{}.ppm'.format(str(self.w)[2:], self.filas, self.columnas, tiempo)
-        f_automata = open(f_nombre, 'w+')
-        f_automata.write(s)
-        f_automata.flush()
-
+        c_inh =  str(self.w)[2:]
+        c_inh = (c_inh + '0') if len(c_inh) == 1 else c_inh
+        posfijo_archivo = 'w{0}_r{1}-{2}_{3}x{3}_{4}'.format(c_inh, self.radio_int, self.radio_ext, self.filas, tiempo)
+        # imagen en blanco y negro
+        aut_bn = open('img/ac_act-inh_' + posfijo_archivo + '.pbm', 'w+')
+        aut_bn.write(salida[0])
+        aut_bn.flush()
+        # imagen en RGB
+        if rgb:
+            aut_rgb = open('img/ac_act-inh_' + posfijo_archivo + '.ppm', 'w+') 
+            aut_rgb.write(salida[1])
+            aut_rgb.flush()
+        
 def main():
-    constante_inhibicion = float(random.randint(10, 30)) / 100
+    constante_inhibicion = float(random.randint(30, 50)) / 100
+    radio_int, radio_ext = 3, 6
+    casillas = 200
+    iteraciones = 10
     if len(sys.argv) > 1:
         constante_inhibicion = float(sys.argv[1]) / 100
-    activador_inhibidor = ActivadorInhibidor(constante_inhibicion)    
+    if len(sys.argv) > 3:
+        radio_int, radio_ext = int(sys.argv[2]), int(sys.argv[3])
+    if len(sys.argv) > 4:
+        casillas = int(sys.argv[4])
+    if len(sys.argv) > 5:
+        iteraciones = int(sys.argv[5])
         
+    ActivadorInhibidor(constante_inhibicion, radio_int, radio_ext, casillas, iteraciones)
+            
 if __name__ == '__main__':
     main()
