@@ -1,6 +1,6 @@
 # -*- coding: iso-8859-1 -*-
 
-import math, datetime
+import math, datetime, png
 from activador_inhibidor import ActivadorInhibidor
 
 class GenerarPez(object):
@@ -60,6 +60,9 @@ class GenerarPez(object):
         eje_menor_vista = 3
         self.dibujar_elipse(mitad_x-20, mitad_y-100, eje_mayor_vista, eje_menor_vista, 'vista')
         
+        # dibujar boca
+        self.dibujar_elipse(mitad_x, mitad_y-144, 10, 6, 'agua')
+        
     def dibujar_elipse(self, fil, col, eje_mayor, eje_menor, caracter='1'):
         """Dibujar un forma geométrica de elipse.
         
@@ -101,19 +104,31 @@ class GenerarPez(object):
         
     def dibujar_pez(self):
         # generar Turing morph
-        turing_morph = ActivadorInhibidor(0.10, 3, 12, self.ancho, 10)
+        turing_morph = ActivadorInhibidor(0.15, 3, 9, self.ancho, 10)
         patron_colores = turing_morph.colorear_automata()
-        s = 'P3\n{} {}\n255\n'.format(self.ancho, self.alto)
-        for i in xrange(self.ancho):
+        """
+        Recortar el espacio de la matriz, tanto en lo ancho como en lo alto,
+        para sólo dibujar la figura del pez.
+        """
+        s = 'P3\n{} {}\n255\n'.format(self.ancho - 60, self.alto - 160)
+        for i in xrange(80, self.ancho - 80):
             linea = ''
-            for j in xrange(self.alto):
+            for j in xrange(50, self.alto - 10):
                 if self.matriz[i][j] == 'agua':
-                    linea += '19 161 203'
+                    # linea += '19 161 203'
+                    linea += '255 255 255'
                 elif self.matriz[i][j] == '1':
-                    linea += patron_colores[i][j]
+                    # verificar si la celda hace parte del borde
+                    if self.dibujar_borde(i, j, 'agua'):
+                        linea += '0 0 0'
+                    else:
+                        linea += patron_colores[i][j]
                 elif self.matriz[i][j] == 'ojo':
                     linea += '0 0 0'
                 elif self.matriz[i][j] == 'vista':
+                    # linea += '255 255 255'
+                    linea += '0 0 0'
+                elif self.matriz[i][j] == 'boca':
                     linea += '255 255 255'
                 linea += ' ' * 3
             s += linea.rstrip() + ('\n' if i < self.ancho - 1 else '')
@@ -121,6 +136,15 @@ class GenerarPez(object):
         pez_salida = open('img/fish_{}.ppm'.format(tiempo), 'w+')
         pez_salida.write(s)
         pez_salida.flush()
+    
+    def dibujar_borde(self, fil, col, caracter='0'):
+        """Dibujar el borde de la figura del pez."""
+        borde = False
+        if self.matriz[fil-1][col]==caracter or self.matriz[fil+1][col]==caracter:
+            borde = True
+        elif self.matriz[fil][col-1]==caracter or self.matriz[fil][col+1]==caracter:
+            borde = True
+        return borde
 
 if __name__ == '__main__':
     GenerarPez()
