@@ -104,7 +104,7 @@ class GenerarPez(object):
         
     def dibujar_pez(self):
         # generar Turing morph
-        turing_morph = ActivadorInhibidor(0.15, 3, 9, self.ancho, 10)
+        turing_morph = ActivadorInhibidor(0.41, 3, 6, self.ancho, 10)
         patron_colores = turing_morph.colorear_automata()
         """
         Recortar el espacio de la matriz, tanto en lo ancho como en lo alto,
