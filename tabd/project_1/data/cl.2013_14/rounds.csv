@@ -1,4 +1,24 @@
 competition_key,date,home_team_key,away_team_key,match_round,full_time_home_team_goals,full_time_away_team_goals,full_time_result
+cl.2013/14,2013/08/20,karagandy,celtic,Play-Off Round  - 1St Leg,2,0,H
+cl.2013/14,2013/08/20,lyon,realsociedad,Play-Off Round  - 1St Leg,0,2,A
+cl.2013/14,2013/08/20,ferreira,zenit,Play-Off Round  - 1St Leg,1,4,A
+cl.2013/14,2013/08/20,psv,milan,Play-Off Round  - 1St Leg,1,1,D
+cl.2013/14,2013/08/20,plzen,maribor,Play-Off Round  - 1St Leg,3,1,H
+cl.2013/14,2013/08/21,zagreb,austria,Play-Off Round  - 1St Leg,0,2,A
+cl.2013/14,2013/08/21,razgrad,basel,Play-Off Round  - 1St Leg,2,4,A
+cl.2013/14,2013/08/21,steaua,legiawarszawa,Play-Off Round  - 1St Leg,1,1,D
+cl.2013/14,2013/08/21,schalke,paok,Play-Off Round  - 1St Leg,1,1,D
+cl.2013/14,2013/08/21,fenerbahce,arsenal,Play-Off Round  - 1St Leg,0,3,A
+cl.2013/14,2013/08/27,austria,zagreb,Play-Off Round  - 2Nd Leg,2,3,A
+cl.2013/14,2013/08/27,basel,razgrad,Play-Off Round  - 2Nd Leg,2,0,H
+cl.2013/14,2013/08/27,legiawarszawa,steaua,Play-Off Round  - 2Nd Leg,2,2,D
+cl.2013/14,2013/08/27,paok,schalke,Play-Off Round  - 2Nd Leg,2,3,A
+cl.2013/14,2013/08/27,arsenal,fenerbahce,Play-Off Round  - 2Nd Leg,2,0,H
+cl.2013/14,2013/08/28,zenit,ferreira,Play-Off Round  - 2Nd Leg,4,2,H
+cl.2013/14,2013/08/28,milan,psv,Play-Off Round  - 2Nd Leg,3,0,H
+cl.2013/14,2013/08/28,maribor,plzen,Play-Off Round  - 2Nd Leg,0,1,A
+cl.2013/14,2013/08/28,celtic,karagandy,Play-Off Round  - 2Nd Leg,3,0,H
+cl.2013/14,2013/08/28,realsociedad,lyon,Play-Off Round  - 2Nd Leg,2,0,H
 cl.2013/14,2013/09/17,manunited,leverkusen,Matchday 1,4,2,H
 cl.2013/14,2013/09/17,realsociedad,donezk,Matchday 1,0,2,A
 cl.2013/14,2013/09/17,galatasaray,madrid,Matchday 1,1,6,A
@@ -95,3 +115,19 @@ cl.2013/14,2013/12/11,atletico,porto,Matchday 6,2,0,H
 cl.2013/14,2013/12/11,austria,zenit,Matchday 6,4,1,H
 cl.2013/14,2013/12/11,milan,ajax,Matchday 6,0,0,D
 cl.2013/14,2013/12/11,barcelona,celtic,Matchday 6,6,1,H
+cl.2013/14,2014/02/18,mancity,barcelona,Round Of 16 - 1St Leg,0,2,A
+cl.2013/14,2014/02/18,leverkusen,paris,Round Of 16 - 1St Leg,0,4,A
+cl.2013/14,2014/02/19,milan,atletico,Round Of 16 - 1St Leg,0,1,A
+cl.2013/14,2014/02/19,arsenal,bayern,Round Of 16 - 1St Leg,0,2,A
+cl.2013/14,2014/02/25,zenit,dortmund,Round Of 16 - 1St Leg,2,4,A
+cl.2013/14,2014/02/25,olympiacos,manunited,Round Of 16 - 1St Leg,2,0,H
+cl.2013/14,2014/02/26,galatasaray,chelsea,Round Of 16 - 1St Leg,1,1,D
+cl.2013/14,2014/02/26,schalke,madrid,Round Of 16 - 1St Leg,1,6,A
+cl.2013/14,2014/03/11,atletico,milan,Round Of 16 - 2Nd Leg,4,1,H
+cl.2013/14,2014/03/11,bayern,arsenal,Round Of 16 - 2Nd Leg,1,1,D
+cl.2013/14,2014/03/12,barcelona,mancity,Round Of 16 - 2Nd Leg,2,1,H
+cl.2013/14,2014/03/12,paris,leverkusen,Round Of 16 - 2Nd Leg,2,1,H
+cl.2013/14,2014/03/18,chelsea,galatasaray,Round Of 16 - 2Nd Leg,2,0,H
+cl.2013/14,2014/03/18,madrid,schalke,Round Of 16 - 2Nd Leg,3,1,H
+cl.2013/14,2014/03/19,manunited,olympiacos,Round Of 16 - 2Nd Leg,3,0,H
+cl.2013/14,2014/03/19,dortmund,zenit,Round Of 16 - 2Nd Leg,1,2,A
