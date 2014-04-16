@@ -1,0 +1,106 @@
+<Schema name="FootballDB">
+  <Cube name="Matchs" visible="true" cache="true" enabled="true">
+    <Table name="fact_match" schema="football_db">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_competition_key" highCardinality="false" name="Competition">
+      <Hierarchy name="Competition" visible="true" hasAll="true" allMemberName="All Competitions" primaryKey="num_competition_sk">
+        <Table name="dim_competition" schema="football_db">
+        </Table>
+        <Level name="CompetitionConfederation" visible="true" table="dim_competition" column="str_confederation_description" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="CompetitionAssociation" visible="true" table="dim_competition" column="str_association_description" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="CompetitionDescription" visible="true" table="dim_competition" column="str_competition_description" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_home_team_key" highCardinality="false" name="HomeTeam">
+      <Hierarchy name="HomeTeam" visible="true" hasAll="true" allMemberName="All Home Teams" primaryKey="num_team_sk" primaryKeyTable="dim_home_team">
+        <Table name="dim_team" schema="football_db" alias="dim_home_team">
+        </Table>
+        <Level name="HomeTeamConfederation" visible="true" table="dim_home_team" column="str_confederation_description" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="HomeTeamCountry" visible="true" table="dim_home_team" column="str_country" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="HomeTeamDescription" visible="true" table="dim_home_team" column="str_team_description" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_away_team_key" highCardinality="false" name="AwayTeam">
+      <Hierarchy name="AwayTeam" visible="true" hasAll="true" allMemberName="All Away Teams" primaryKey="num_team_sk" primaryKeyTable="dim_away_team">
+        <Table name="dim_team" schema="football_db" alias="dim_away_team">
+        </Table>
+        <Level name="AwayTeamConfederation" visible="true" table="dim_away_team" column="str_confederation_description" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="AwayTeamCountry" visible="true" table="dim_away_team" column="str_country" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="AwayTeamDescription" visible="true" table="dim_away_team" column="str_team_description" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_date_key" highCardinality="false" name="Date">
+      <Hierarchy name="Date" visible="true" hasAll="true" allMemberName="All Dates" primaryKey="num_date_sk">
+        <Table name="dim_date" schema="football_db">
+        </Table>
+        <Level name="Year" visible="true" table="dim_date" column="num_year" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Month" visible="true" table="dim_date" column="num_month" nameColumn="str_calendar_month" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Day" visible="true" table="dim_date" column="num_day" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="HomeTeamGoals" column="num_home_team_goals" aggregator="sum" caption="Goles Locales" visible="true">
+    </Measure>
+    <Measure name="AwayTeamGoals" column="num_away_team_goals" aggregator="sum" caption="Goles Visitantes" visible="true">
+    </Measure>
+    <Measure name="Matchs" column="num_match_sk" datatype="Integer" formatString="#,###" aggregator="count" caption="Partidos" visible="true">
+    </Measure>
+    <Measure name="HomeWins" formatString="#,###" aggregator="sum" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(case when football_db.fact_match.str_result='H' then 1 else 0  end)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
+    <Measure name="AwayWins" aggregator="sum" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(case when football_db.fact_match.str_result='A' then 1 else 0 end)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
+    <Measure name="Draws" aggregator="sum" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(case when football_db.fact_match.str_result='D' then 1 else 0 end)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
+    <CalculatedMember name="Goals" caption="Goles" dimension="Measures" visible="true">
+      <Formula>
+        <![CDATA[[Measures].[HomeTeamGoals] + [Measures].[AwayTeamGoals]]]>
+      </Formula>
+    </CalculatedMember>
+    <CalculatedMember name="GoalsAverage" formatString="0.0" caption="Media" dimension="Measures" visible="true">
+      <Formula>
+        <![CDATA[[Measures].[Goals] / [Measures].[Matchs]]]>
+      </Formula>
+    </CalculatedMember>
+    <CalculatedMember name="PerHomeWins" dimension="Measures" visible="true">
+      <Formula>
+        <![CDATA[IIf([Measures].[Matchs] > 0, ([Measures].[HomeWins] / [Measures].[Matchs]) * 100, 0)]]>
+      </Formula>
+    </CalculatedMember>
+    <CalculatedMember name="PerAwayWins" formatString="" formula="" dimension="Measures" visible="true">
+      <Formula>
+        <![CDATA[IIf([Measures].[Matchs] > 0, ([Measures].[AwayWins] / [Measures].[Matchs]) * 100, 0)]]>
+      </Formula>
+    </CalculatedMember>
+    <CalculatedMember name="PerDraws" formatString="" formula="" dimension="Measures" visible="true">
+      <Formula>
+        <![CDATA[IIf([Measures].[Matchs] > 0, ([Measures].[Draws] / [Measures].[Matchs]) * 100, 0)]]>
+      </Formula>
+    </CalculatedMember>
+  </Cube>
+</Schema>
