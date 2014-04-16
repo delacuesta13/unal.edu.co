@@ -1,0 +1,1 @@
+/usr/share/tomcat/webapps/mondrian/WEB-INF/queries/footballdb_query1.jsp
