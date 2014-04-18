@@ -2,7 +2,7 @@
   <Cube name="Matchs" visible="true" cache="true" enabled="true">
     <Table name="fact_match" schema="football_db">
     </Table>
-    <Dimension type="StandardDimension" visible="true" foreignKey="num_competition_key" highCardinality="false" name="Competition">
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_competition_key" highCardinality="false" name="Competition" caption="Competici&#243;n">
       <Hierarchy name="Competition" visible="true" hasAll="true" allMemberName="All Competitions" primaryKey="num_competition_sk">
         <Table name="dim_competition" schema="football_db">
         </Table>
@@ -14,7 +14,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="num_home_team_key" highCardinality="false" name="HomeTeam">
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_home_team_key" highCardinality="false" name="HomeTeam" caption="Equipo Local">
       <Hierarchy name="HomeTeam" visible="true" hasAll="true" allMemberName="All Home Teams" primaryKey="num_team_sk" primaryKeyTable="dim_home_team">
         <Table name="dim_team" schema="football_db" alias="dim_home_team">
         </Table>
@@ -26,7 +26,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="num_away_team_key" highCardinality="false" name="AwayTeam">
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_away_team_key" highCardinality="false" name="AwayTeam" caption="Equipo Visitante">
       <Hierarchy name="AwayTeam" visible="true" hasAll="true" allMemberName="All Away Teams" primaryKey="num_team_sk" primaryKeyTable="dim_away_team">
         <Table name="dim_team" schema="football_db" alias="dim_away_team">
         </Table>
@@ -38,7 +38,7 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Dimension type="StandardDimension" visible="true" foreignKey="num_date_key" highCardinality="false" name="Date">
+    <Dimension type="StandardDimension" visible="true" foreignKey="num_date_key" highCardinality="false" name="Date" caption="Fecha">
       <Hierarchy name="Date" visible="true" hasAll="true" allMemberName="All Dates" primaryKey="num_date_sk">
         <Table name="dim_date" schema="football_db">
         </Table>
@@ -77,6 +77,41 @@
         </SQL>
       </MeasureExpression>
     </Measure>
+    <Measure name="FirstPlayedMatch" datatype="String" formatString="####/##/##" aggregator="min" caption="Primer Partido Jugado" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(SELECT DATE_FORMAT(`football_db`.`dim_date`.`dtm_date`, '%Y/%m/%d') FROM `football_db`.`dim_date` WHERE `fact_match`.`num_date_key`=`football_db`.`dim_date`.`num_date_sk`)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
+    <Measure name="LastPlayedMatch" datatype="String" formatString="####/##/##" aggregator="max" caption="&#218;ltimo Partido Jugado" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(SELECT DATE_FORMAT(`football_db`.`dim_date`.`dtm_date`, '%Y/%m/%d') FROM `football_db`.`dim_date` WHERE `fact_match`.`num_date_key`=`football_db`.`dim_date`.`num_date_sk`)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
+    <Measure name="LastWin" datatype="String" formatString="####/##/##" aggregator="max" caption="&#218;. Victoria" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(SELECT DATE_FORMAT(`football_db`.`dim_date`.`dtm_date`, '%Y/%m/%d') FROM `football_db`.`dim_date` WHERE `fact_match`.`num_date_key`=`football_db`.`dim_date`.`num_date_sk` AND `fact_match`.`num_home_team_goals`>`fact_match`.`num_away_team_goals`)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
+    <Measure name="LastLost" datatype="String" formatString="####/##/##" aggregator="max" caption="&#218;. Derrota" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(SELECT DATE_FORMAT(`football_db`.`dim_date`.`dtm_date`, '%Y/%m/%d') FROM `football_db`.`dim_date` WHERE `fact_match`.`num_date_key`=`football_db`.`dim_date`.`num_date_sk` AND `fact_match`.`num_home_team_goals`<`fact_match`.`num_away_team_goals`)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
+    <Measure name="LastDraw" datatype="String" formatString="####/##/##" aggregator="max" caption="U. Empate" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(SELECT DATE_FORMAT(`football_db`.`dim_date`.`dtm_date`, '%Y/%m/%d') FROM `football_db`.`dim_date` WHERE `fact_match`.`num_date_key`=`football_db`.`dim_date`.`num_date_sk` AND `fact_match`.`num_home_team_goals`=`fact_match`.`num_away_team_goals`)]]>
+        </SQL>
+      </MeasureExpression>
+    </Measure>
     <CalculatedMember name="Goals" caption="Goles" dimension="Measures" visible="true">
       <Formula>
         <![CDATA[[Measures].[HomeTeamGoals] + [Measures].[AwayTeamGoals]]]>
@@ -92,12 +127,12 @@
         <![CDATA[IIf([Measures].[Matchs] > 0, ([Measures].[HomeWins] / [Measures].[Matchs]) * 100, 0)]]>
       </Formula>
     </CalculatedMember>
-    <CalculatedMember name="PerAwayWins" formatString="" formula="" dimension="Measures" visible="true">
+    <CalculatedMember name="PerAwayWins" dimension="Measures" visible="true">
       <Formula>
         <![CDATA[IIf([Measures].[Matchs] > 0, ([Measures].[AwayWins] / [Measures].[Matchs]) * 100, 0)]]>
       </Formula>
     </CalculatedMember>
-    <CalculatedMember name="PerDraws" formatString="" formula="" dimension="Measures" visible="true">
+    <CalculatedMember name="PerDraws" dimension="Measures" visible="true">
       <Formula>
         <![CDATA[IIf([Measures].[Matchs] > 0, ([Measures].[Draws] / [Measures].[Matchs]) * 100, 0)]]>
       </Formula>
