@@ -17,7 +17,8 @@ WITH
     STR(INT(ROUND([Measures].[Draws],0)))||" ("||LTRIM(STR(ROUND([Measures].[PerDraws].Value, 1)))||"%)"
 SELECT
     {
-        [Measures].[Matchs], [Measures].[Goals], [Measures].[GoalsAverage],
+        [Measures].[Matchs], [Measures].[FirstPlayedMatch], [Measures].[LastPlayedMatch],
+        [Measures].[Goals], [Measures].[GoalsAverage],
         [Measures].[HomeTeamGoals], [Measures].[AwayTeamGoals],
         [Measures].[Victorias Locales], [Measures].[Victorias Visitantes], [Measures].[Empates]
     } ON COLUMNS,
@@ -27,4 +28,4 @@ SELECT
 FROM Matchs
 </jp:mondrianQuery>
 
-<c:set var="title01" scope="session">Football DB's Cube</c:set>
+<c:set var="title01" scope="session">Football DB's Cube - Overview</c:set>
